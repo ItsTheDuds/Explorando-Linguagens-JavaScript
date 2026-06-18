@@ -1,18 +1,16 @@
 class Pessoa {
     _nome;
-    _idade;
-    _raca;
-    _nacionalidade;
+    _tipo;
+    _cpf;
 
-    constructor(nome, idade, raca, nacionalidade){
+    constructor(nome, cpf, tipo){
         this._nome = nome;
-        this._idade = idade;
-        this._raca = raca;
-        this._nacionalidade = nacionalidade;
+        this._cpf = cpf;
+        this._tipo = tipo;
     }
 
     exibirPessoa() {
-        console.log(`Nome: ${this._nome}, Idade: ${this._idade}, Raça: ${this._raca}, Nacionalidade: ${this._nacionalidade}`);
+        console.log(`Nome: ${this._nome}, Idade: ${this._cpf}, Tipo: ${this._tipo}`);
     }
 
 }
