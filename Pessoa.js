@@ -1,19 +1,12 @@
 class Pessoa {
-    _nome;
-    _tipo;
-    _cpf;
-
-    constructor(nome, cpf, tipo){
-        this._nome = nome;
-        this._cpf = cpf;
-        this._tipo = tipo;
+    constructor(nome, cpf) {
+        this.nome = nome; // Evite usar o "_" se não for criar getters/setters, deixa o código mais limpo
+        this.cpf = cpf;
     }
 
     exibirPessoa() {
-        console.log(`Nome: ${this._nome}, Idade: ${this._cpf}, Tipo: ${this._tipo}`);
+        console.log(`Nome: ${this.nome}, CPF: ${this.cpf}`);
     }
 
 }
-const pessoa = new Pessoa("Eduardo", 21, "Braziliano", "Brasileiro");
-pessoa.exibirPessoa();
 module.exports = Pessoa;

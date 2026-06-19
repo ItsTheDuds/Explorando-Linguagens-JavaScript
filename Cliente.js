@@ -12,15 +12,16 @@ class Cliente extends Pessoa {
     constructor(nome, cpf, tipo) {
         super(nome, cpf);
         this.tipo = tipo;
+        this.senha = Cliente.gerarSenha(tipo); 
     }
 
     static gerarSenha(tipo) {
-        if (tipo === Cliente.TipoClien.PRIORITARIO) {
+        if (tipo === Cliente.TipoCliente.PRIORITARIO) {
             Cliente.contadorPrioritario++;
-            return `P${Cliente.contadorPrioritario.toString().padStart(3, '0')}`
+            return `P${Cliente.contadorPrioritario.toString().padStart(3, '0')}`;
         }
         Cliente.contadorComum++;
-        return `P${Cliente.contadorPrioritario.toString().padStart(3, '0')}`
+        return `C${Cliente.contadorComum.toString().padStart(3, '0')}`;
     }
 }
 module.exports = Cliente;

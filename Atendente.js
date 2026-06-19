@@ -8,19 +8,22 @@ class Atendente extends Pessoa {
     }
 
     atender(cliente) {
-        console.log(`Atendente ${this.nome} atendendo cliente ${cliente.nome}`)
-        historico.push(cliente)
+        console.log(`Atendente ${this.nome} atendendo cliente ${cliente.nome}`);
+        this.historico.push(cliente); 
     }
 
     relatorio() {
-        console.log(`RELATÓRIO DE ATENDIMENTO DO ATENDENTE ${this.nome}`)
-        console.log(`Total de atendimentos ${this.historico.length}\n`)
+        console.log(`\n==============================================`);
+        console.log(`RELATÓRIO DE ATENDIMENTO DO ATENDENTE ${this.nome}`);
+        console.log(`Total de atendimentos: ${this.historico.length}`);
+        console.log(`==============================================`);
+        
         if (this.historico.length > 0) {
-            historico.forEach(cliente, index => {
-                console.log(`Atendimento ${index + 1} \t ${cliente.tipo} \t ${cliente.nome})`);
+            this.historico.forEach((cliente, index) => {
+                console.log(`Atendimento ${index + 1} \t Senha: ${cliente.senha} \t Tipo: ${cliente.tipo} \t Nome: ${cliente.nome}`);
             });
         } else {
-            console.log(`Nenhum atendimento registrado.`)
+            console.log(`Nenhum atendimento registrado.`);
         }
     }
 }
